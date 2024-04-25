@@ -10,10 +10,8 @@ export default {
         "raleway": "'Raleway', sans-serif"
       },
       colors: {
-        "primary_color": "#0fa4af",
-        "secondry_color": "#afdde5",
-        "third_color": "#f3f0e6",
-        "fourth_color": "#465048",
+        "primary_text_color": "#000000",
+        "primary_bg_color": "#f2f2f2",
       }
     },
   },
