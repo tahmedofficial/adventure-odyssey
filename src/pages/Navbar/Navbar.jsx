@@ -10,8 +10,8 @@ const Navbar = () => {
 
     const navItems = <>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "border-b-2 duration-300 text-primary_text_color font-medium px-3 pb-2 border-primary_text_color" : "font-medium"}>Home</NavLink></li>
+        <li><NavLink to="/allTouristSpot" className={({ isActive }) => isActive ? "border-b-2 duration-300 text-primary_text_color font-medium px-3 pb-2 border-primary_text_color" : "font-medium"}>All Tourist Spot</NavLink></li>
         <li><NavLink to="/addTouristsSpot" className={({ isActive }) => isActive ? "border-b-2 duration-300 text-primary_text_color font-medium px-3 pb-2 border-primary_text_color" : "font-medium"}>Add Tourists Spot</NavLink></li>
-        <li><NavLink to="/register" className={({ isActive }) => isActive ? "border-b-2 duration-300 text-primary_text_color font-medium px-3 pb-2 border-primary_text_color" : "font-medium"}>Location</NavLink></li>
     </>
 
     return (
@@ -35,7 +35,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end gap-3">
                     <div className="btn btn-circle">
-                        <img className="w-full h-full rounded-full" src={ user?.photoURL} alt="Profile" />
+                        <img className="w-full h-full rounded-full" src={user?.photoURL} alt="Profile" />
                     </div>
                     <Link to="/login">
                         <button className="btn border-0 text-white text-lg bg-primary_text_color">Login</button>

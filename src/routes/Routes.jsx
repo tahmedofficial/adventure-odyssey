@@ -5,6 +5,7 @@ import Login from "../pages/Login/Login";
 import Root from "../layout/Root";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AddTouristsSpot from "../pages/AddTouristsSpot/AddTouristsSpot";
+import AllTouristSpots from "../pages/AllTouristSpots/AllTouristSpots";
 
 
 const router = createBrowserRouter([
@@ -27,7 +28,12 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addTouristsSpot",
-                element:<AddTouristsSpot></AddTouristsSpot>
+                element: <AddTouristsSpot></AddTouristsSpot>
+            },
+            {
+                path: "/allTouristSpot",
+                element: <AllTouristSpots></AllTouristSpots>,
+                loader: () => fetch("http://localhost:5000/travel")
             }
         ]
     },
