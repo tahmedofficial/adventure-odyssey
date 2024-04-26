@@ -35,7 +35,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end gap-3">
                     <div className="btn btn-circle">
-                        <img className="w-full h-full rounded-full" src={user.photoURL} alt="Profile" />
+                        <img className="w-full h-full rounded-full" src={ user?.photoURL} alt="Profile" />
                     </div>
                     <Link to="/login">
                         <button className="btn border-0 text-white text-lg bg-primary_text_color">Login</button>
