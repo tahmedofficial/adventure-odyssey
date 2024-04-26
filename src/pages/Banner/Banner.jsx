@@ -10,7 +10,7 @@ const Banner = () => {
         <div className="carousel w-full py-10 bg-primary_bg_color">
 
             {/* Slider-1 */}
-            <div id="slide1" className="carousel-item relative w-full">
+            <div id="slide1" className="carousel-item relative w-full group">
                 <div className="grid md:grid-cols-3 w-full md:w-5/6 mx-auto items-center">
                     <div className="md:col-span-2 px-4 md:flex flex-col justify-center animate__animated  animate__fadeInLeft animate__slow">
                         <h1 className="text-4xl lg:text-5xl font-semibold text-primary_text_color">
@@ -28,13 +28,13 @@ const Banner = () => {
                     </div>
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide3" className="btn btn-circle bg-primary_text_color border-0 text-lg text-white"><FaChevronLeft /></a>
-                    <a href="#slide2" className="btn btn-circle bg-primary_text_color border-0 text-lg text-white"><FaChevronRight /></a>
+                    <a href="#slide3" className="btn btn-circle invisible group-hover:visible bg-primary_text_color border-0 text-lg text-white"><FaChevronLeft /></a>
+                    <a href="#slide2" className="btn btn-circle invisible group-hover:visible bg-primary_text_color border-0 text-lg text-white"><FaChevronRight /></a>
                 </div>
             </div>
 
             {/* Slider-2 */}
-            <div id="slide2" className="carousel-item relative w-full">
+            <div id="slide2" className="carousel-item relative w-full group">
                 <div className="grid md:grid-cols-3 w-full md:w-5/6 mx-auto items-center">
                     <div className="md:col-span-2 px-4 md:flex flex-col justify-center">
                         <h1 className="text-4xl lg:text-5xl font-semibold text-primary_text_color">
@@ -51,13 +51,13 @@ const Banner = () => {
                     </div>
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide1" className="btn btn-circle bg-primary_text_color border-0 text-lg text-white"><FaChevronLeft /></a>
-                    <a href="#slide3" className="btn btn-circle bg-primary_text_color border-0 text-lg text-white"><FaChevronRight /></a>
+                    <a href="#slide1" className="btn btn-circle invisible group-hover:visible bg-primary_text_color border-0 text-lg text-white"><FaChevronLeft /></a>
+                    <a href="#slide3" className="btn btn-circle invisible group-hover:visible bg-primary_text_color border-0 text-lg text-white"><FaChevronRight /></a>
                 </div>
             </div>
 
             {/* Slider-3 */}
-            <div id="slide3" className="carousel-item relative w-full">
+            <div id="slide3" className="carousel-item relative w-full group">
                 <div className="grid md:grid-cols-3 w-full md:w-5/6 mx-auto items-center">
                     <div className="md:col-span-2 px-4 md:flex flex-col justify-center">
                         <h1 className="text-4xl lg:text-5xl font-semibold text-primary_text_color">
@@ -75,8 +75,8 @@ const Banner = () => {
                     </div>
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide2" className="btn btn-circle bg-primary_text_color border-0 text-lg text-white"><FaChevronLeft /></a>
-                    <a href="#slide1" className="btn btn-circle bg-primary_text_color border-0 text-lg text-white"><FaChevronRight /></a>
+                    <a href="#slide2" className="btn btn-circle invisible group-hover:visible bg-primary_text_color border-0 text-lg text-white"><FaChevronLeft /></a>
+                    <a href="#slide1" className="btn btn-circle invisible group-hover:visible bg-primary_text_color border-0 text-lg text-white"><FaChevronRight /></a>
                 </div>
             </div>
 
