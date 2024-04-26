@@ -1,19 +1,18 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProviders";
 
 
 
 const Navbar = () => {
 
+    const { user } = useContext(AuthContext);
 
     const navItems = <>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "border-b-2 duration-300 text-primary_text_color font-medium px-3 pb-2 border-primary_text_color" : "font-medium"}>Home</NavLink></li>
         <li><NavLink to="/login" className={({ isActive }) => isActive ? "border-b-2 duration-300 text-primary_text_color font-medium px-3 pb-2 border-primary_text_color" : "font-medium"}>Update Profile</NavLink></li>
         <li><NavLink to="/register" className={({ isActive }) => isActive ? "border-b-2 duration-300 text-primary_text_color font-medium px-3 pb-2 border-primary_text_color" : "font-medium"}>Location</NavLink></li>
     </>
-
-
-
-
 
     return (
         <div className="pb-5 pt-7 bg-third_color px-2">
@@ -35,8 +34,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-3">
-                    <div className="btn btn-circle tooltip">
-                        <img className="w-full h-full rounded-full" src="" alt="Profile" />
+                    <div className="btn btn-circle">
+                        <img className="w-full h-full rounded-full" src={user.photoURL} alt="Profile" />
                     </div>
                     <Link to="/login">
                         <button className="btn border-0 text-white text-lg bg-primary_text_color">Login</button>

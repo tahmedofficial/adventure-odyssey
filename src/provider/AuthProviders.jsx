@@ -1,6 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 import { Bounce, toast } from "react-toastify";
 
@@ -9,6 +9,7 @@ export const AuthContext = createContext(null);
 
 const AuthProviders = ({ children }) => {
 
+    const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const toastMessage = (message) => toast.success(message, {
@@ -48,9 +49,19 @@ const AuthProviders = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser);
+            setLoading(false);
+        })
+        return () => {
+            unSubscribe();
+        }
+    }, [])
 
 
     const authInfo = {
+        user,
         loading,
         toastMessage,
         errorMessage,
