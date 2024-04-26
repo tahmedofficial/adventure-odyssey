@@ -9,7 +9,7 @@ const Footer = () => {
             <footer className="footer md:w-5/6 mx-auto px-10">
                 <div>
                     <h1 className="font-semibold text-xl text-white">Services</h1>
-                    <h3 className="text-white">TripAdvisor</h3>
+                    <h3 className="text-white">Trip Advisor</h3>
                     <h3 className="text-white">Airbnb</h3>
                     <h3 className="text-white">Booking</h3>
                     <h3 className="text-white">Hotwire</h3>
@@ -46,16 +46,16 @@ const Footer = () => {
                     </div>
                     <h1 className="text-xl font-semibold text-white mt-5">Follow us on</h1>
                     <div className="flex gap-4 text-xl text-white">
-                        <div className="border border-white rounded-full p-2">
+                        <div className="border border-white hover:text-rose-500 hover:border-rose-500 duration-300 rounded-full p-2">
                             <FaFacebookF />
                         </div>
-                        <div className="border border-white rounded-full p-2">
+                        <div className="border border-white hover:text-rose-500 hover:border-rose-500 duration-300 rounded-full p-2">
                             <FaTwitter />
                         </div>
-                        <div className="border border-white rounded-full p-2">
+                        <div className="border border-white hover:text-rose-500 hover:border-rose-500 duration-300 rounded-full p-2">
                             <FaInstagram />
                         </div>
-                        <div className="border border-white rounded-full p-2">
+                        <div className="border border-white hover:text-rose-500 hover:border-rose-500 duration-300 rounded-full p-2">
                             <FaLinkedin />
                         </div>
                     </div>

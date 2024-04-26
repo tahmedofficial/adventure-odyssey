@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const navItems = <>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "border-b-2 duration-300 text-primary_text_color font-medium px-3 pb-2 border-primary_text_color" : "font-medium"}>Home</NavLink></li>
-        <li><NavLink to="/login" className={({ isActive }) => isActive ? "border-b-2 duration-300 text-primary_text_color font-medium px-3 pb-2 border-primary_text_color" : "font-medium"}>Update Profile</NavLink></li>
+        <li><NavLink to="/addTouristsSpot" className={({ isActive }) => isActive ? "border-b-2 duration-300 text-primary_text_color font-medium px-3 pb-2 border-primary_text_color" : "font-medium"}>Add Tourists Spot</NavLink></li>
         <li><NavLink to="/register" className={({ isActive }) => isActive ? "border-b-2 duration-300 text-primary_text_color font-medium px-3 pb-2 border-primary_text_color" : "font-medium"}>Location</NavLink></li>
     </>
 
