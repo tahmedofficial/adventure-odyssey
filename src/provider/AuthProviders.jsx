@@ -13,6 +13,7 @@ const AuthProviders = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [touristPlaces, setTouristPlaces] = useState([]);
+    const [countryes, setCountryse] = useState([]);
 
     const toastMessage = (message) => toast.success(message, {
         position: "top-center",
@@ -90,10 +91,19 @@ const AuthProviders = ({ children }) => {
             })
     }, [])
 
+    useEffect(() => {
+        fetch("http://localhost:5000/country")
+            .then(res => res.json())
+            .then(data => {
+                setCountryse(data);
+            })
+    }, [])
+
     const authInfo = {
         user,
         loading,
         touristPlaces,
+        countryes,
         setUser,
         toastMessage,
         sweetMessage,

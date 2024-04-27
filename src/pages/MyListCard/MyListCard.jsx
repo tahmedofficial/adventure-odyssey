@@ -57,5 +57,5 @@ const MyListCard = ({ tourist }) => {
 export default MyListCard;
 
 MyListCard.propTypes = {
-    tourist: PropTypes.object.isRequired
+    tourist: PropTypes.object.isRequired,
 }

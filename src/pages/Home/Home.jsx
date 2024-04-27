@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import TouristSpots from "../TouristSpots/TouristSpots";
+import Countryes from "../Countryes/Countryes";
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
                     <button className="btn rounded-none text-lg bg-primary_text_color text-white px-12">See All Tourist Spot</button>
                 </Link>
             </div>
+            <Countryes></Countryes>
         </div>
     );
 };
