@@ -1,23 +1,16 @@
 
-import { useEffect, useState } from "react";
+import { useContext} from "react";
+import { AuthContext } from "../../provider/AuthProviders";
 
 
 const TouristSpots = () => {
 
-    const [touristPlaces, setTouristPlaces] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:5000/travel")
-            .then(res => res.json())
-            .then(data => {
-                setTouristPlaces(data);
-            })
-    }, [])
+    const {touristPlaces}=useContext(AuthContext);
 
     return (
         <div className="md:w-4/6 mx-auto px-3 md:px-0">
             {
-                touristPlaces.slice(0, 7).map(tourist => <div key={tourist._id}>
+                touristPlaces.slice(0, 6).map(tourist => <div key={tourist._id}>
 
                     <div className="card md:grid grid-cols-3 shadow-xl bg-primary_card_color items-center mt-8">
                         <div className="col-span-1 p-5">

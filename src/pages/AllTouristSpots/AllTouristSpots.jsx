@@ -6,6 +6,8 @@ const AllTouristSpots = () => {
 
     return (
         <div className="md:w-4/6 mx-auto px-3 md:px-0">
+            <h1 className="font-semibold text-center py-16 text-4xl">Total Places {touristPlaces.length}</h1>
+
             {
                 touristPlaces.map(tourist => <div key={tourist._id}>
 

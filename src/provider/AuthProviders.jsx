@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 import { Bounce, toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 export const AuthContext = createContext(null);
 
@@ -11,6 +12,7 @@ const AuthProviders = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [touristPlaces, setTouristPlaces] = useState([]);
 
     const toastMessage = (message) => toast.success(message, {
         position: "top-center",
@@ -35,6 +37,15 @@ const AuthProviders = ({ children }) => {
             progress: undefined,
             theme: "light",
             transition: Bounce,
+        });
+    }
+
+    const sweetMessage = (message) => {
+        Swal.fire({
+            icon: "success",
+            title: message,
+            showConfirmButton: false,
+            timer: 1500
         });
     }
 
@@ -71,12 +82,21 @@ const AuthProviders = ({ children }) => {
         }
     }, [])
 
+    useEffect(() => {
+        fetch("http://localhost:5000/travel")
+            .then(res => res.json())
+            .then(data => {
+                setTouristPlaces(data);
+            })
+    }, [])
 
     const authInfo = {
         user,
         loading,
+        touristPlaces,
         setUser,
         toastMessage,
+        sweetMessage,
         errorMessage,
         registerUser,
         loginUser,
