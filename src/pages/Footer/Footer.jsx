@@ -62,7 +62,7 @@ const Footer = () => {
                 </div>
             </footer>
             <div className="border-t border-white mt-16">
-                <h3 className="text-white text-center mt-8">Copyright © 2024 - All right reserved by TripEase Company Ltd</h3>
+                <h3 className="text-white text-center mt-8">Copyright © 2024 - All right reserved by Odyssey Company Ltd</h3>
             </div>
         </div>
     );

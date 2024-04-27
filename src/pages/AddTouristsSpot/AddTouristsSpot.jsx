@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProviders";
 
 
 
 const AddTouristsSpot = () => {
+
+    const { user } = useContext(AuthContext);
 
     const handleAddTouristsSpot = (e) => {
         e.preventDefault()
@@ -84,12 +88,12 @@ const AddTouristsSpot = () => {
                 </div>
                 <div className="lg:flex gap-5">
                     <div className="w-full">
-                        <h3 className="mb-2 font-medium text-primary_text_color">User Email</h3>
-                        <input className="h-10 w-full outline-none pl-3 rounded-lg" type="email" name="email" placeholder="Enter Your Email" required />
+                        <h3 className="mb-2 font-medium text-primary_text_color">Your Email</h3>
+                        <input className="h-10 w-full outline-none pl-3 rounded-lg" type="email" name="email" defaultValue={user.email} required />
                     </div>
                     <div className="w-full mt-5 lg:mt-0">
-                        <h3 className="mb-2 font-medium text-primary_text_color">Name</h3>
-                        <input className="h-10 w-full outline-none pl-3 rounded-lg" type="text" name="name" placeholder="Enter Your Name" required />
+                        <h3 className="mb-2 font-medium text-primary_text_color">Your Name</h3>
+                        <input className="h-10 w-full outline-none pl-3 rounded-lg" type="text" name="name" defaultValue={user.displayName} required />
                     </div>
                 </div>
                 <button className="btn bg-primary_text_color text-white text-lg mt-8">Add</button>

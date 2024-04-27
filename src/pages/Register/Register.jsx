@@ -6,7 +6,7 @@ import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
-    const { registerUser, toastMessage, errorMessage } = useContext(AuthContext);
+    const { registerUser, setUser, toastMessage, errorMessage } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleRegister = (event) => {
@@ -17,6 +17,22 @@ const Register = () => {
         const photo = form.photo.value;
         const password = form.password.value;
 
+        // validation
+        if (password.length < 6) {
+            errorMessage("Password must be 6 characters")
+            return
+        }
+
+        if (!/^(?=.*[A-Z]).+$/.test(password)) {
+            errorMessage("Enter an uppercase letter")
+            return
+        }
+
+        if (!/^(?=.*[a-z]).+$/.test(password)) {
+            errorMessage("Enter an lowercase  letter")
+            return
+        }
+
         registerUser(email, password)
             .then(data => {
                 const user = data.user;
@@ -25,6 +41,10 @@ const Register = () => {
                     photoURL: photo,
                 })
                     .then(() => {
+                        setUser({
+                            displayName: name,
+                            photoURL: photo,
+                        })
                         toastMessage("Successfully Register")
                         navigate("/")
                     })

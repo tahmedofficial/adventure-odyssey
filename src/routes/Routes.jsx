@@ -6,6 +6,8 @@ import Root from "../layout/Root";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AddTouristsSpot from "../pages/AddTouristsSpot/AddTouristsSpot";
 import AllTouristSpots from "../pages/AllTouristSpots/AllTouristSpots";
+import MyList from "../pages/MyList/MyList";
+import PrivateRoutes from "../routes/PrivateRoutes";
 
 
 const router = createBrowserRouter([
@@ -27,13 +29,17 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: "/addTouristsSpot",
-                element: <AddTouristsSpot></AddTouristsSpot>
-            },
-            {
                 path: "/allTouristSpot",
                 element: <AllTouristSpots></AllTouristSpots>,
                 loader: () => fetch("http://localhost:5000/travel")
+            },
+            {
+                path: "/addTouristsSpot",
+                element: <PrivateRoutes><AddTouristsSpot></AddTouristsSpot></PrivateRoutes>
+            },
+            {
+                path: "/myList",
+                element: <PrivateRoutes><MyList></MyList></PrivateRoutes>
             }
         ]
     },
