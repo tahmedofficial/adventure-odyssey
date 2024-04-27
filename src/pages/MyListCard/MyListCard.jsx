@@ -20,7 +20,7 @@ const MyListCard = ({ tourist }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/travel/${_id}`, {
+                fetch(`https://adventure-odyssey-server.vercel.app/travel/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())

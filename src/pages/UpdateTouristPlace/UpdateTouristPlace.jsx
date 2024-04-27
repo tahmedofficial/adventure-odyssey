@@ -22,7 +22,7 @@ const UpdateTouristPlace = () => {
         const totaVisitors = form.totaVisitors.value;
         const data = { photo, touristsSpot, countryName, location, description, averageCost, seasonality, travelTime, totaVisitors }
 
-        fetch(`http://localhost:5000/travel/${id}`, {
+        fetch(`https://adventure-odyssey-server.vercel.app/travel/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

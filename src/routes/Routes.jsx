@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             {
                 path: "/allTouristSpot",
                 element: <AllTouristSpots></AllTouristSpots>,
-                loader: () => fetch("http://localhost:5000/travel")
+                loader: () => fetch("https://adventure-odyssey-server.vercel.app/travel")
             },
             {
                 path: "/addTouristsSpot",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
             {
                 path: "/updateTouristPlace/:id",
                 element: <PrivateRoutes><UpdateTouristPlace></UpdateTouristPlace></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/travel/${params.id}`)
+                loader: ({ params }) => fetch(`https://adventure-odyssey-server.vercel.app/travel/${params.id}`)
             }
         ]
     },

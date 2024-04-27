@@ -84,7 +84,7 @@ const AuthProviders = ({ children }) => {
     }, [])
 
     useEffect(() => {
-        fetch("http://localhost:5000/travel")
+        fetch("https://adventure-odyssey-server.vercel.app/travel")
             .then(res => res.json())
             .then(data => {
                 setTouristPlaces(data);
@@ -92,7 +92,7 @@ const AuthProviders = ({ children }) => {
     }, [])
 
     useEffect(() => {
-        fetch("http://localhost:5000/country")
+        fetch("https://adventure-odyssey-server.vercel.app/country")
             .then(res => res.json())
             .then(data => {
                 setCountryse(data);

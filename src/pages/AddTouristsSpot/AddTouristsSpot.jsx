@@ -25,7 +25,7 @@ const AddTouristsSpot = () => {
         const data = { photo, touristsSpot, countryName, location, description, averageCost, seasonality, travelTime, totaVisitors, email, name }
         console.log(data);
 
-        fetch("http://localhost:5000/travel", {
+        fetch("https://adventure-odyssey-server.vercel.app/travel", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
