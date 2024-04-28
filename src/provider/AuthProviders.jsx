@@ -64,6 +64,7 @@ const AuthProviders = ({ children }) => {
     const loginWithGoogle = () => {
 
     }
+    
     const loginWithFacebook = () => {
 
     }

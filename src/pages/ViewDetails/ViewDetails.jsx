@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProviders";
 import { FaLocationDot } from "react-icons/fa6";
 import { HiMiniCurrencyDollar } from "react-icons/hi2";
@@ -51,11 +51,6 @@ const ViewDetails = () => {
                     <h3 className="text-primary_text_color text-lg mt-2"><span className="font-semibold">Seasonality:</span> {seasonality}</h3>
                     <h3 className="text-primary_text_color text-lg my-2"><span className="font-semibold">TravelTime:</span> {travelTime}</h3>
                     <h3 className="text-primary_text_color text-lg"><span className="font-semibold">Tota Visitors Per Year:</span> {totaVisitors}</h3>
-                    <div className="mt-5">
-                        <Link to="/">
-                            <button className="btn rounded-none bg-primary_text_color text-white px-12">Go To Home</button>
-                        </Link>
-                    </div>
                 </div>
             </div>
         </div>

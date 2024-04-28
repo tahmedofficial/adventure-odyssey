@@ -18,7 +18,7 @@ const AllTouristSpots = () => {
                 touristPlaces.map(tourist => <div key={tourist._id}>
 
                     <div className="card md:grid grid-cols-3 shadow-lg bg-primary_card_color items-center mt-6">
-                        <div className="col-span-1 p-5">
+                        <div className="col-span-1 p-5 w-full">
                             <img className="w-full h-64 rounded-xl" src={tourist.photo} alt="image" />
                         </div>
                         <div className="col-span-2 p-5">
