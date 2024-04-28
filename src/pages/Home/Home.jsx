@@ -4,6 +4,7 @@ import TouristSpots from "../TouristSpots/TouristSpots";
 import Countryes from "../Countryes/Countryes";
 
 const Home = () => {
+
     return (
         <div>
             <Banner></Banner>

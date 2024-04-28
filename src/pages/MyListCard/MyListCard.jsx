@@ -3,11 +3,12 @@ import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProviders";
 import { Link } from "react-router-dom";
+import { MdDelete, MdEdit } from "react-icons/md";
 
-const MyListCard = ({ tourist }) => {
+const MyListCard = ({ tourist, index }) => {
 
-    const { sweetMessage } = useContext(AuthContext);
-    const { _id, photo, touristsSpot, description } = tourist;
+    const { sweetMessage, control, setControl } = useContext(AuthContext);
+    const { _id, photo, touristsSpot, countryName, location, averageCost } = tourist;
 
     const handleDelete = () => {
         Swal.fire({
@@ -28,6 +29,7 @@ const MyListCard = ({ tourist }) => {
                         console.log(data);
                         if (data.deletedCount > 0) {
                             sweetMessage("Successfully Deleted")
+                            setControl(!control)
                         }
                     })
             }
@@ -35,22 +37,28 @@ const MyListCard = ({ tourist }) => {
     }
 
     return (
-        <div className="card md:grid grid-cols-3 shadow-xl bg-primary_card_color items-center mt-10">
-            <div className="col-span-1 p-5">
-                <img className="w-full h-64 rounded-xl" src={photo} alt="image" />
-            </div>
-            <div className="col-span-2 p-5">
-                <h1 className="text-2xl font-medium text-primary_text_color">{touristsSpot}</h1>
-                <h3 className="text-primary_text_color text-lg">{description}</h3>
-                <div className="mt-5">
-                    <button className="btn rounded-none bg-primary_text_color text-white px-12">View Details</button>
-                    <Link to={`/updateTouristPlace/${_id}`}>
-                        <button className="btn rounded-none bg-primary_text_color text-white px-12">Update</button>
-                    </Link>
-                    <button onClick={handleDelete} className="btn rounded-none bg-primary_text_color text-white px-12">Delete</button>
+        <tr className="hover">
+            <th>{index + 1}</th>
+            <td>
+                <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                        <img src={photo} alt="Photo" />
+                    </div>
                 </div>
-            </div>
-        </div>
+            </td>
+            <td>{countryName}</td>
+            <td>{touristsSpot}</td>
+            <td>{location}</td>
+            <td>{averageCost}</td>
+            <td className="flex flex-col gap-2">
+                <Link to={`/updateTouristPlace/${_id}`}>
+                    <button className="p-2 rounded-lg hover:bg-slate-400 duration-300 bg-primary_text_color text-lg text-white"><MdEdit /></button>
+                </Link>
+                <div>
+                    <button onClick={handleDelete} className="p-2 rounded-lg hover:bg-slate-400 duration-300 bg-red-500 text-lg text-white"><MdDelete /></button>
+                </div>
+            </td>
+        </tr>
     );
 };
 
@@ -58,4 +66,5 @@ export default MyListCard;
 
 MyListCard.propTypes = {
     tourist: PropTypes.object.isRequired,
+    index: PropTypes.number
 }

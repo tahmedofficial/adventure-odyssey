@@ -34,9 +34,8 @@ const Register = () => {
         }
 
         registerUser(email, password)
-            .then(data => {
-                const user = data.user;
-                updateProfile(user, {
+            .then(result => {
+                updateProfile(result.user, {
                     displayName: name,
                     photoURL: photo,
                 })
@@ -45,13 +44,10 @@ const Register = () => {
                             displayName: name,
                             photoURL: photo,
                         })
-                        toastMessage("Successfully Register")
-                        navigate("/")
                     })
-                    .catch(error => {
-                        console.log(error);
-                        errorMessage("Something Wrong try Again")
-                    })
+                    .catch()
+                toastMessage("Registered Successfully")
+                navigate("/")
             })
             .catch(error => {
                 const errorMessage = error.message;

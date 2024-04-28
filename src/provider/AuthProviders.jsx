@@ -14,6 +14,8 @@ const AuthProviders = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [touristPlaces, setTouristPlaces] = useState([]);
     const [countryes, setCountryse] = useState([]);
+    const [control, setControl] = useState(false);
+
 
     const toastMessage = (message) => toast.success(message, {
         position: "top-center",
@@ -64,7 +66,7 @@ const AuthProviders = ({ children }) => {
     const loginWithGoogle = () => {
 
     }
-    
+
     const loginWithFacebook = () => {
 
     }
@@ -91,7 +93,7 @@ const AuthProviders = ({ children }) => {
                 setTouristPlaces(data);
                 setLoading(false)
             })
-    }, [])
+    }, [user, control])
 
     useEffect(() => {
         fetch("https://adventure-odyssey-server.vercel.app/country")
@@ -107,6 +109,8 @@ const AuthProviders = ({ children }) => {
         loading,
         touristPlaces,
         countryes,
+        control,
+        setControl,
         setUser,
         toastMessage,
         sweetMessage,

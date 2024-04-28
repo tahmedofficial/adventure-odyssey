@@ -5,7 +5,7 @@ import { AuthContext } from "../../provider/AuthProviders";
 
 const AddTouristsSpot = () => {
 
-    const { user, sweetMessage } = useContext(AuthContext);
+    const { user, sweetMessage, control, setControl } = useContext(AuthContext);
 
 
     const handleAddTouristsSpot = (e) => {
@@ -37,6 +37,7 @@ const AddTouristsSpot = () => {
                 if (data.insertedId) {
                     form.reset()
                     sweetMessage("Successfully added to the server")
+                    setControl(!control)
                 }
             })
     }
@@ -57,7 +58,14 @@ const AddTouristsSpot = () => {
                     </div>
                     <div className="w-full mt-5 lg:mt-0">
                         <h3 className="mb-2 font-medium text-primary_text_color">Country Name</h3>
-                        <input className="h-10 w-full outline-none pl-3 rounded-lg" type="text" name="countryName" placeholder="Enter Country Name" required />
+                        <select className="h-10 w-full outline-none pl-3 rounded-lg" name="countryName" required>
+                            <option>France</option>
+                            <option>Italy</option>
+                            <option>Spain</option>
+                            <option>England</option>
+                            <option>Netherlands</option>
+                            <option>Switzerland</option>
+                        </select>
                     </div>
                 </div>
                 <div className="lg:flex gap-5">
