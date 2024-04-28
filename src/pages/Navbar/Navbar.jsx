@@ -60,7 +60,7 @@ const Navbar = () => {
                     <button className="font-bold text-3xl text-primary_text_color">Odyssey</button>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="flex gap-6 text-primary_text_color text-lg">
+                    <ul className="flex gap-6 text-primary_text_color">
                         {navItems}
                     </ul>
                 </div>

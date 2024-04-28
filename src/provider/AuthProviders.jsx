@@ -1,9 +1,10 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, FacebookAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 import { Bounce, toast } from "react-toastify";
 import Swal from "sweetalert2";
+// import { GoogleAuthProvider } from "firebase/auth/cordova";
 
 export const AuthContext = createContext(null);
 
@@ -63,12 +64,16 @@ const AuthProviders = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+    const provider = new GoogleAuthProvider();
     const loginWithGoogle = () => {
-
+        setLoading(true);
+        return signInWithPopup(auth, provider)
     }
 
+    const facebookProvider = new FacebookAuthProvider();
     const loginWithFacebook = () => {
-
+        setLoading(true)
+        return signInWithPopup(auth, facebookProvider)
     }
 
     const logoutUser = () => {

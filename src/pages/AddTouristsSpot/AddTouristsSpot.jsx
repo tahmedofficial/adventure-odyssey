@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProviders";
 
 
-
 const AddTouristsSpot = () => {
 
     const { user, sweetMessage, control, setControl } = useContext(AuthContext);
