@@ -1,11 +1,12 @@
 
-import { useContext} from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProviders";
+import { Link } from "react-router-dom";
 
 
 const TouristSpots = () => {
 
-    const {touristPlaces}=useContext(AuthContext);
+    const { touristPlaces } = useContext(AuthContext);
 
     return (
         <div className="md:w-4/6 mx-auto px-3 md:px-0">
@@ -20,7 +21,9 @@ const TouristSpots = () => {
                             <h1 className="text-2xl font-medium text-primary_text_color">{tourist.touristsSpot}</h1>
                             <h3 className="text-primary_text_color text-lg">{tourist.description}</h3>
                             <div className="mt-5">
-                                <button className="btn rounded-none bg-primary_text_color text-white px-12">View Details</button>
+                                <Link to={`/viewDetails/${tourist._id}`}>
+                                    <button className="btn rounded-none bg-primary_text_color text-white px-12">View Details</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

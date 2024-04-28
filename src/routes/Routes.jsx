@@ -9,6 +9,7 @@ import AllTouristSpots from "../pages/AllTouristSpots/AllTouristSpots";
 import MyList from "../pages/MyList/MyList";
 import PrivateRoutes from "../routes/PrivateRoutes";
 import UpdateTouristPlace from "../pages/UpdateTouristPlace/UpdateTouristPlace";
+import ViewDetails from "../pages/ViewDetails/ViewDetails";
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
                 path: "/allTouristSpot",
                 element: <AllTouristSpots></AllTouristSpots>,
                 loader: () => fetch("https://adventure-odyssey-server.vercel.app/travel")
+            },
+            {
+                path: "/viewDetails/:id",
+                element: <PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
+                loader: ({ params }) => fetch(`https://adventure-odyssey-server.vercel.app/travel/${params.id}`)
             },
             {
                 path: "/addTouristsSpot",

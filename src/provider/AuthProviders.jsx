@@ -88,6 +88,7 @@ const AuthProviders = ({ children }) => {
             .then(res => res.json())
             .then(data => {
                 setTouristPlaces(data);
+                setLoading(false)
             })
     }, [])
 
@@ -96,6 +97,7 @@ const AuthProviders = ({ children }) => {
             .then(res => res.json())
             .then(data => {
                 setCountryse(data);
+                setLoading(false)
             })
     }, [])
 
