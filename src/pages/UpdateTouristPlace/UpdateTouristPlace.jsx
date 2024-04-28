@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProviders";
 
 const UpdateTouristPlace = () => {
 
     const touristPlace = useLoaderData();
     const { sweetMessage } = useContext(AuthContext);
+    const navigate = useNavigate();
     const id = touristPlace._id;
 
     const handleUpdateTouristPlace = (event) => {
@@ -34,6 +35,7 @@ const UpdateTouristPlace = () => {
                 if (data.modifiedCount > 0) {
                     form.reset()
                     sweetMessage("Successfully Updated")
+                    navigate("/myList")
                 }
             })
     }

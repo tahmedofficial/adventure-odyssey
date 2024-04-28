@@ -37,7 +37,7 @@ const MyListCard = ({ tourist }) => {
     return (
         <div className="card md:grid grid-cols-3 shadow-xl bg-primary_card_color items-center mt-10">
             <div className="col-span-1 p-5">
-                <img className="w-full h-64 rounded-xl" src={photo} alt="Movie" />
+                <img className="w-full h-64 rounded-xl" src={photo} alt="image" />
             </div>
             <div className="col-span-2 p-5">
                 <h1 className="text-2xl font-medium text-primary_text_color">{touristsSpot}</h1>
