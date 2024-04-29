@@ -1,14 +1,12 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { AuthContext } from "../../provider/AuthProviders";
 
 const AllTouristSpots = () => {
 
     const touristPlaces = useLoaderData();
-    const { loading } = useContext(AuthContext);
     const [sortedPlaces, setSortedPlaces] = useState(touristPlaces);
 
-    if (loading) {
+    if (!touristPlaces) {
         return <span className="loading loading-spinner loading-lg text-primary_text_color mx-auto flex justify-center border mt-20"></span>
     }
 
@@ -51,7 +49,11 @@ const AllTouristSpots = () => {
                             <h3 className="text-primary_text_coor text-lg">{tourist.description}</h3>
                             <div className="flex flex-col md:flex-row gap-2 md:gap-6 mt-5">
                                 <h3 className="text-primary_text_coor text-lg"><span className="text-lg font-semibold">Average Cost: </span>{tourist.averageCost}</h3>
+                                <h3 className="text-primary_text_coor text-lg"><span className="text-lg font-semibold">Tota Visitors Per Year: </span>{tourist.totaVisitors}</h3>
+                            </div>
+                            <div className="flex flex-col md:flex-row gap-2 md:gap-6 mt-5">
                                 <h3 className="text-primary_text_coor text-lg"><span className="text-lg font-semibold">Travel Time: </span>{tourist.travelTime}</h3>
+                                <h3 className="text-primary_text_coor text-lg"><span className="text-lg font-semibold">Seasonality: </span>{tourist.seasonality}</h3>
                             </div>
                             <div className="mt-5">
                                 <Link to={`/viewDetails/${tourist._id}`}>

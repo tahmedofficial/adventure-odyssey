@@ -8,6 +8,10 @@ const TouristSpots = () => {
 
     const { touristPlaces } = useContext(AuthContext);
 
+    if (!touristPlaces) {
+        return <span className="loading loading-spinner loading-lg text-primary_text_color mx-auto flex justify-center border mt-20"></span>
+    }
+
     return (
         <div className="md:w-4/6 mx-auto px-3 md:px-0">
             {

@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import TouristSpots from "../TouristSpots/TouristSpots";
 import Countryes from "../Countryes/Countryes";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
+import About from "../About/About";
 
 const Home = () => {
 
@@ -18,6 +19,7 @@ const Home = () => {
             </div>
             <Countryes></Countryes>
             <WhyChooseUs></WhyChooseUs>
+            <About></About>
         </div>
     );
 };

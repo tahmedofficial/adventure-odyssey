@@ -6,7 +6,7 @@ import { SiVorondesign } from "react-icons/si";
 const WhyChooseUs = () => {
     return (
         <div className="md:w-5/6 mx-auto">
-            <h1 className="font-semibold text-center pt-32 pb-8 text-4xl">Wht Choose Us</h1>
+            <h1 className="font-semibold text-center pt-32 text-primary_text_color pb-8 text-4xl">Why Choose Us</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 <div className="bg-primary_card_color p-8 m-3 rounded-xl">
