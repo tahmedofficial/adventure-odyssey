@@ -7,9 +7,6 @@ import MyListCard from "../MyListCard/MyListCard";
 const MyList = () => {
 
     const { user, touristPlaces } = useContext(AuthContext);
-    if (!user) {
-        return <span className="loading loading-spinner loading-lg text-primary_text_color mx-auto flex justify-center border mt-20"></span>
-    }
 
     const myTouristPlaces = touristPlaces.filter(touristPlace => touristPlace.email === user.email);
 

@@ -9,11 +9,11 @@
 - Virtual Tours and 360-Degree Panoramas
 - Destination Weather 
 
-### Selected 
-- Europe
-a. France
-b. Italy
-c. Spain
-d. England
-e. Netherlands
-f. Switzerland
+### Selected Category's
+- Europe Zones
+- France
+- Italy
+- Spain
+- England
+- Netherlands
+- Switzerland
