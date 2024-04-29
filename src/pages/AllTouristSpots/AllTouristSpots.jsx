@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllTouristSpots = () => {
@@ -27,6 +28,9 @@ const AllTouristSpots = () => {
 
     return (
         <div className="md:w-4/6 mx-auto px-3 md:px-0">
+            <Helmet>
+                <title>All Tourist Spot</title>
+            </Helmet>
             <h1 className="font-semibold text-center py-16 text-4xl">Total Places {touristPlaces.length}</h1>
 
             <div className="dropdown">

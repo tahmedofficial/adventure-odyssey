@@ -1,6 +1,7 @@
 import { useContext} from "react";
 import { AuthContext } from "../../provider/AuthProviders";
 import MyListCard from "../MyListCard/MyListCard";
+import { Helmet } from "react-helmet";
 
 
 
@@ -11,8 +12,10 @@ const MyList = () => {
     const myTouristPlaces = touristPlaces.filter(touristPlace => touristPlace.email === user.email);
 
     return (
-
         <div className="overflow-x-auto md:w-4/6 mx-auto px-3 md:px-0">
+            <Helmet>
+                <title>My List</title>
+            </Helmet>
             <h1 className="font-semibold text-center py-16 text-4xl">My Added Places</h1>
             <table className="table">
                 <thead>

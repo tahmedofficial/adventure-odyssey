@@ -4,11 +4,15 @@ import TouristSpots from "../TouristSpots/TouristSpots";
 import Countryes from "../Countryes/Countryes";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 import About from "../About/About";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <Banner></Banner>
             <h3 className="text-4xl md:text-5xl font-semibold text-primary_text_color pt-20 text-center">Tourists Spots</h3>
             <TouristSpots></TouristSpots>

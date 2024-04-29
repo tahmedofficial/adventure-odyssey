@@ -2,7 +2,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import france from "../../assets/images/france.jpg";
 import spain from "../../assets/images/spain.jfif";
 import italy from "../../assets/images/colosseum.jpg";
-import 'animate.css';
+import { Fade } from 'react-awesome-reveal';
 
 const Banner = () => {
 
@@ -12,16 +12,18 @@ const Banner = () => {
             {/* Slider-1 */}
             <div id="slide1" className="carousel-item relative w-full group">
                 <div className="grid md:grid-cols-3 w-full md:w-5/6 mx-auto items-center">
-                    <div className="md:col-span-2 px-4 md:flex flex-col justify-center animate__animated  animate__fadeInLeft animate__slow">
-                        <h1 className="text-4xl lg:text-5xl font-semibold text-primary_text_color">
-                            Eiffel Tower, Paris
-                        </h1>
-                        <h3 className="py-5 text-lg my-4 text-primary_text_color">
-                            Embark on a journey like no other as you discover the captivating allure of Paris, a land brimming with diverse landscapes, vibrant cultures, and immersive experiences. Nestled in the heart of the continent, Spin beckons travelers with its blend of ancient traditions and modern marvels.
-                        </h3>
-                        <div>
-                            <button className="btn text-white bg-primary_text_color rounded-none px-10">Visite</button>
-                        </div>
+                    <div className="md:col-span-2 px-4 md:flex flex-col justify-center">
+                        <Fade cascade damping={0.1}>
+                            <h1 className="text-4xl lg:text-5xl font-semibold text-primary_text_color">
+                                Eiffel Tower, Paris
+                            </h1>
+                            <h3 className="py-5 text-lg my-4 text-primary_text_color">
+                                Embark on a journey like no other as you discover the captivating allure of Paris, a land brimming with diverse landscapes, vibrant cultures, and immersive experiences. Nestled in the heart of the continent, Spin beckons travelers with its blend of ancient traditions and modern marvels.
+                            </h3>
+                            <div>
+                                <button className="btn text-white bg-primary_text_color rounded-none px-10">Visite</button>
+                            </div>
+                        </Fade>
                     </div>
                     <div className="md:col-span-1 p-4 pt-10">
                         <img src={france} className="h-96 w-full rounded-xl" />

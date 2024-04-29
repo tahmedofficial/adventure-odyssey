@@ -3,6 +3,7 @@ import { useContext } from "react";
 // import { HiMiniCurrencyDollar } from "react-icons/hi2";
 import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProviders";
+import { Helmet } from "react-helmet";
 
 const CountryDetails = () => {
 
@@ -12,6 +13,9 @@ const CountryDetails = () => {
 
     return (
         <div className="md:w-4/6 mx-auto">
+            <Helmet>
+                <title>Country</title>
+            </Helmet>
             <h1 className="font-semibold text-primary_text_color text-center pt-12 pb-16 text-4xl">{name}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
