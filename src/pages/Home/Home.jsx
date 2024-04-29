@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import TouristSpots from "../TouristSpots/TouristSpots";
 import Countryes from "../Countryes/Countryes";
+import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 
 const Home = () => {
 
@@ -16,6 +17,7 @@ const Home = () => {
                 </Link>
             </div>
             <Countryes></Countryes>
+            <WhyChooseUs></WhyChooseUs>
         </div>
     );
 };
