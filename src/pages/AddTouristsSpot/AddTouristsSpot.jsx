@@ -6,6 +6,9 @@ const AddTouristsSpot = () => {
 
     const { user, sweetMessage, control, setControl } = useContext(AuthContext);
 
+    if (!user) {
+        return <span className="loading loading-spinner loading-lg text-primary_text_color mx-auto flex justify-center border mt-20"></span>
+    }
 
     const handleAddTouristsSpot = (e) => {
         e.preventDefault()

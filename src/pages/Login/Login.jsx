@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProviders";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
@@ -8,6 +8,7 @@ const Login = () => {
 
     const { loginUser, loginWithGoogle, loginWithFacebook, toastMessage, errorMessage } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogin = (event) => {
         event.preventDefault();

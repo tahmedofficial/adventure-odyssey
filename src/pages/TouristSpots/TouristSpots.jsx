@@ -20,6 +20,10 @@ const TouristSpots = () => {
                         <div className="col-span-2 p-5">
                             <h1 className="text-2xl font-medium text-primary_text_color">{tourist.touristsSpot}</h1>
                             <h3 className="text-primary_text_color text-lg">{tourist.description}</h3>
+                            <div className="flex flex-col md:flex-row gap-2 md:gap-6 mt-5">
+                                <h3 className="text-primary_text_coor text-lg"><span className="text-lg font-semibold">Average Cost: </span>{tourist.averageCost}</h3>
+                                <h3 className="text-primary_text_coor text-lg"><span className="text-lg font-semibold">Travel Time: </span>{tourist.travelTime}</h3>
+                            </div>
                             <div className="mt-5">
                                 <Link to={`/viewDetails/${tourist._id}`}>
                                     <button className="btn rounded-none bg-primary_text_color text-white px-12">View Details</button>
