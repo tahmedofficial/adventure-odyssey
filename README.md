@@ -9,7 +9,7 @@
 - Virtual Tours and 360-Degree Panoramas
 - Destination Weather 
 
-### Selected Category's
+### Selected Category
 - Europe Zones
 - France
 - Italy
