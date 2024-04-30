@@ -96,7 +96,6 @@ const AuthProviders = ({ children }) => {
             .then(res => res.json())
             .then(data => {
                 setTouristPlaces(data);
-                setLoading(false)
             })
     }, [user, control])
 
@@ -105,7 +104,6 @@ const AuthProviders = ({ children }) => {
             .then(res => res.json())
             .then(data => {
                 setCountryse(data);
-                setLoading(false)
             })
     }, [])
 
